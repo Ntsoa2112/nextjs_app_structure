@@ -10,9 +10,9 @@ const Home: NextPageWithLayout = () => {
   return (
     <section className={styles.main}>
       <h1 className={styles.title}>
-        Welcome to
-        <Link href="https://nextjs.org" legacyBehavior>
-          <a>Next.js!</a>
+        Hello
+        <Link href="https://github.com/Ntsoa2112" legacyBehavior>
+          <a target="_blank"> Ntsoa! </a>
         </Link>
       </h1>
       <CatCard {...mockCatCardProps.base} />
