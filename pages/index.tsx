@@ -7,6 +7,11 @@ import styles from '../styles/Home.module.css';
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
+  if (typeof window !== 'undefined') {
+    console.log('You are on the browser');
+  } else {
+    console.log('You are on the server');
+  }
   return (
     <section className={styles.main}>
       <h1 className={styles.title}>
