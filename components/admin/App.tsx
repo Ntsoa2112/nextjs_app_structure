@@ -1,21 +1,35 @@
+import PostIcon from '@mui/icons-material/Book';
+import UserIcon from '@mui/icons-material/Group';
 import jsonServerProvider from 'ra-data-json-server';
-import { Admin, EditGuesser, Resource } from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import { CommentList } from './comments/List';
-import { PostList } from './posts/List';
-import { UserEdit } from './users/Edit';
-import { UserList } from './users/List';
+import { Dashboard } from './Dashboard';
+import { PostCreate } from './posts/CreatePost';
+import { PostEdit } from './posts/EditPost';
+import { PostList } from './posts/ListPost';
+import { UserCreate } from './users/CreateUser';
+import { UserEdit } from './users/EditUser';
+import { UserList } from './users/ListUser';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
-  <Admin dataProvider={dataProvider}>
+  <Admin dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource
       name="users"
       list={UserList}
       recordRepresentation="name"
-      edit={EditGuesser}
+      edit={UserEdit}
+      create={UserCreate}
+      icon={UserIcon}
     />
-    <Resource name="posts" list={PostList} edit={UserEdit} />
+    <Resource
+      name="posts"
+      list={PostList}
+      edit={PostEdit}
+      create={PostCreate}
+      icon={PostIcon}
+    />
     <Resource name="comments" list={CommentList} />
   </Admin>
 );
