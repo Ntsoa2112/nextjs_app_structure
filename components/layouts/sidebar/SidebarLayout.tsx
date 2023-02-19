@@ -16,6 +16,9 @@ const SidebarLayout: React.FC<ISidebarLayout> = () => {
       <Link href="/contact" legacyBehavior>
         <a>Contact</a>
       </Link>
+      <Link href="/export" legacyBehavior>
+        <a>Export</a>
+      </Link>
     </nav>
   );
 };
